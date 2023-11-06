@@ -1,17 +1,34 @@
 import socket
 
-SOCK_BUFFER = 1024
+host = '127.0.0.1'
+port = 5001
 
-if __name__ == '__main__':
+if __name__=='__main__':
+
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_address = ('localhost', 5001)
+    server_address = ('0.0.0.0',5001)
 
-    print(f"Conectando al servidor {server_address[0]}:{server_address[1]}")
-    sock.connect(server_address)
+    print(f"Iniciando servidor en: {server_address[0]}:{server_address[1]}")
+    sock.bind((host, port))
+
+    sock.listen(5)
+
+    print(f"Servidor de eco escuchando en {host}:{port}")
+
+    while True:
+        conn, client_address = sock.accept()
+        print(f"Conexión entrante desde {client_address}")
+
+        #try:
+        #except KeyboardInterrupt:
+        #   print("Interrupción")
+        #finally:
+        #   conn.close
+
+    #conn.close()
 
     #envia
-    # sock.sendall(a.encode('utf-8'))
+    # conn.sendall(codigo.encode('utf-8'))
 
     #recibe
-    # rpta=sock.recv(SOCK_BUFFER).decode('utf-8')
-
+    # dato=conn.recv(1024).decode('utf-8')
