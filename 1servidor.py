@@ -19,6 +19,14 @@ if __name__=='__main__':
         conn, client_address = sock.accept()
         print(f"Conexión entrante desde {client_address}")
 
+        #try:
+        #except KeyboardInterrupt:
+        #   print("Interrupción")
+        #finally:
+        #   conn.close
+
+    #conn.close()
+
 
     #envia
     # conn.sendall(codigo.encode('utf-8'))
