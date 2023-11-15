@@ -29,10 +29,10 @@ if __name__=='__main__':
 
 
     #envia
-    # conn.sendall(codigo.encode('utf-8'))
+    # conn.sendall(dato.encode('utf-8'))
 
     #recibe
-    # dato=conn.recv(1024).decode('utf-8')
+    # rpta=conn.recv(1024).decode('utf-8')
 
     #convertir a cadena de texto
     # str()
